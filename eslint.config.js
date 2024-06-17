@@ -30,6 +30,7 @@ module.exports = tseslint.config(
           style: "kebab-case",
         },
       ],
+      "@typescript-eslint/no-explicit-any": "error",
     },
   },
   {
@@ -38,6 +39,6 @@ module.exports = tseslint.config(
       ...angular.configs.templateRecommended,
       ...angular.configs.templateAccessibility,
     ],
-    rules: { "@typescript-eslint/no-explicit-any": "error" },
+    rules: {},
   }
 );

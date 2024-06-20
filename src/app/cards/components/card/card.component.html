@@ -1,0 +1,35 @@
+<mat-card appearance="raised" class="card">
+  <img mat-card-image [src]="card().url" alt="video poster" />
+  <mat-card-content class="space-between">
+    <mat-icon
+      [matBadge]="card().viewCount"
+      aria-hidden="false"
+      aria-label="visibility icon"
+      fontIcon="visibility"
+    ></mat-icon>
+    <mat-icon
+      [matBadge]="card().likeCount"
+      aria-hidden="false"
+      aria-label="like icon"
+      fontIcon="thumb_up"
+    ></mat-icon>
+    <mat-icon
+      [matBadge]="card().dislikeCount"
+      aria-hidden="false"
+      aria-label="dislike icon"
+      fontIcon="thumb_down"
+    ></mat-icon>
+    <mat-icon
+      [matBadge]="card().commentCount"
+      aria-hidden="false"
+      aria-label="comment icon"
+      fontIcon="comment"
+    ></mat-icon>
+  </mat-card-content>
+  <mat-card-content class="flex-grow">
+    {{ card().title }}
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button class="link">more...</a>
+  </mat-card-actions>
+</mat-card>

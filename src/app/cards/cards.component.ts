@@ -11,6 +11,6 @@ import { CardInterface } from './types/card.interface';
   styleUrl: './cards.component.scss',
 })
 export class CardsComponent {
-  #storeService = inject(StoreService);
+  readonly #storeService = inject(StoreService);
   cards: WritableSignal<CardInterface[]> = signal(this.#storeService.cards);
 }

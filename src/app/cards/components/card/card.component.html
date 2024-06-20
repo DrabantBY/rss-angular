@@ -1,5 +1,12 @@
-<mat-card appearance="raised" class="card">
-  <img mat-card-image [src]="card().url" alt="video poster" />
+<mat-card appearance="raised" class="card" [appPublished]="card().publishedAt">
+  <img
+    mat-card-image
+    [ngSrc]="card().url"
+    [width]="card().width"
+    [height]="card().height"
+    priority
+    alt="video poster"
+  />
   <mat-card-content class="space-between">
     <mat-icon
       [matBadge]="card().viewCount"
@@ -30,6 +37,6 @@
     {{ card().title }}
   </mat-card-content>
   <mat-card-actions>
-    <a mat-raised-button class="link">more...</a>
+    <a mat-raised-button class="link">MORE...</a>
   </mat-card-actions>
 </mat-card>

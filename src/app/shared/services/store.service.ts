@@ -1,4 +1,3 @@
-import { CardInterface } from './../../cards/types/card.interface.d';
 import {
   Injectable,
   Signal,
@@ -8,19 +7,21 @@ import {
 } from '@angular/core';
 import data from '../../../response.json';
 import { ResponseInterface } from '../types/response.interface';
+import { CardInterface } from './../../cards/types/card.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StoreService {
-  #store: WritableSignal<ResponseInterface> = signal(data);
+  readonly #store: WritableSignal<ResponseInterface> = signal(data);
 
-  #cards: Signal<CardInterface[]> = computed(() => {
+  readonly #cards: Signal<CardInterface[]> = computed(() => {
     const { items } = this.#store();
     const list: CardInterface[] = items.map((item) => ({
       id: item.id,
       title: item.snippet.title,
-      url: item.snippet.thumbnails.medium.url,
+      publishedAt: item.snippet.publishedAt,
+      ...item.snippet.thumbnails.medium,
       ...item.statistics,
     }));
 

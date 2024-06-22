@@ -1,0 +1,22 @@
+<button class="size" mat-fab extended [matMenuTriggerFor]="userMenu">
+  <ng-content>unknown</ng-content>
+  <mat-icon>person</mat-icon>
+</button>
+<mat-menu #userMenu xPosition="before">
+  <a mat-menu-item>
+    <mat-icon>account_circle</mat-icon>
+    change avatar
+  </a>
+  <a mat-menu-item>
+    <mat-icon>edit</mat-icon>
+    edit user name
+  </a>
+  <a mat-menu-item>
+    <mat-icon>settings</mat-icon>
+    user settings
+  </a>
+  <a mat-menu-item>
+    <mat-icon>delete</mat-icon>
+    remove account
+  </a>
+</mat-menu>

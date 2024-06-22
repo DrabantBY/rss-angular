@@ -1,0 +1,16 @@
+<mat-toolbar>
+  <mat-toolbar-row class="space-between">
+    <app-logo></app-logo>
+    <div class="space-between">
+      <app-settings-btn
+        [isOpenFilterList]="isOpenFilterList"
+        (click)="toggleFilterList()"
+      ></app-settings-btn>
+      <app-user-menu></app-user-menu>
+    </div>
+  </mat-toolbar-row>
+
+  @if(isOpenFilterList) {
+  <mat-toolbar-row>FilterList must be here</mat-toolbar-row>
+  }
+</mat-toolbar>

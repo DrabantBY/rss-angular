@@ -3,6 +3,7 @@ import { MatToolbar, MatToolbarRow } from '@angular/material/toolbar';
 import { LogoComponent } from './components/logo/logo.component';
 import { SettingsBtnComponent } from './components/settings-btn/settings-btn.component';
 import { UserMenuComponent } from './components/user-menu/user-menu.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +14,7 @@ import { UserMenuComponent } from './components/user-menu/user-menu.component';
     LogoComponent,
     SettingsBtnComponent,
     UserMenuComponent,
+    FilterComponent,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',

@@ -1,6 +1,6 @@
 <form [formGroup]="filterForm">
   <mat-form-field>
     <mat-label>filter by words</mat-label>
-    <input matInput formControlName="words" />
+    <input matInput formControlName="words" (ngModelChange)="onWordsChange()" />
   </mat-form-field>
 </form>

@@ -1,4 +1,4 @@
-@for(card of cards(); track card.id) {
+@for(card of cards() | filter: words; track card.id) {
 
 <app-card [card]="card"></app-card>
 

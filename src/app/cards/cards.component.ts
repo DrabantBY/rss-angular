@@ -1,7 +1,7 @@
-import { Component, WritableSignal, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CardComponent } from './components/card/card.component';
 import { StoreService } from '../shared/services/store.service';
-import { CardInterface } from './types/card.interface';
+
 import { FilterService } from '../shared/services/filter.service';
 import { FilterPipe } from '../shared/pipes/filter.pipe';
 
@@ -16,7 +16,9 @@ export class CardsComponent {
   readonly #storeService = inject(StoreService);
   readonly #filterService = inject(FilterService);
 
-  cards: WritableSignal<CardInterface[]> = signal(this.#storeService.cards);
+  get cards() {
+    return this.#storeService.cards;
+  }
 
   get words() {
     return this.#filterService.words;

@@ -15,6 +15,8 @@ import { CardInterface } from './../../cards/types/card.interface';
 export class StoreService {
   readonly #store: WritableSignal<ResponseInterface> = signal(data);
 
+  readonly #search: WritableSignal<boolean> = signal(false);
+
   readonly #cards: Signal<CardInterface[]> = computed(() => {
     const { items } = this.#store();
     const list: CardInterface[] = items.map((item) => ({
@@ -25,10 +27,15 @@ export class StoreService {
       ...item.statistics,
     }));
 
-    return list;
+    return this.#search() ? list : [];
   });
 
   get cards() {
-    return this.#cards();
+    return this.#cards;
+  }
+
+  set search(value: boolean) {
+    console.log(value, 'asdfasdfsa');
+    this.#search.set(value);
   }
 }

@@ -1,0 +1,6 @@
+<form [formGroup]="searchForm" class="search-form" (submit)="onSubmit()">
+  <mat-form-field subscriptSizing="dynamic" class="search-field">
+    <input matInput formControlName="search" />
+  </mat-form-field>
+  <button mat-button class="btn-search-submit" type="submit">SEARCH</button>
+</form>

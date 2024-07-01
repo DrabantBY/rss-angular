@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CardComponent } from './components/card/card.component';
 import { StoreService } from '../shared/services/store.service';
-
 import { FilterService } from '../shared/services/filter.service';
 import { FilterPipe } from '../shared/pipes/filter.pipe';
 

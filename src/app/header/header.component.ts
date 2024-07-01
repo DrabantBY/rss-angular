@@ -5,6 +5,7 @@ import { SettingsBtnComponent } from './components/settings-btn/settings-btn.com
 import { UserMenuComponent } from './components/user-menu/user-menu.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { SearchComponent } from './components/search/search.component';
+import { SortComponent } from './components/sort/sort.component';
 
 @Component({
   selector: 'app-header',
@@ -17,6 +18,7 @@ import { SearchComponent } from './components/search/search.component';
     UserMenuComponent,
     FilterComponent,
     SearchComponent,
+    SortComponent,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',

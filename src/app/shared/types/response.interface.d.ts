@@ -49,7 +49,6 @@ export interface ResponseItemInterface {
 }
 
 export interface ResponseInterface {
-  TODO: string;
   kind: string;
   etag: string;
   pageInfo: PageInfoInterface;

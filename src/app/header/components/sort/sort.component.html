@@ -1,0 +1,17 @@
+<form [formGroup]="sortForm" class="sort-form">
+  <mat-form-field subscriptSizing="dynamic">
+    <mat-label>sort by views</mat-label>
+    <mat-select formControlName="views" (ngModelChange)="onChangeViews()">
+      <mat-option value="desc">in descending order</mat-option>
+      <mat-option value="asc">in ascending order</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field subscriptSizing="dynamic">
+    <mat-label>sort by date</mat-label>
+    <mat-select formControlName="date" (ngModelChange)="onChangeDate()">
+      <mat-option value="desc">in descending order</mat-option>
+      <mat-option value="asc">in ascending order</mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>

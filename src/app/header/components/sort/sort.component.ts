@@ -25,11 +25,17 @@ export class SortComponent {
 
   onChangeDate() {
     const date: SortFieldType = this.sortForm.value?.date ?? null;
+    this.sortForm.get('views')?.setValue(null, {
+      emitViewToModelChange: false,
+    });
     this.#storeService.sort = { date, views: null };
   }
 
   onChangeViews() {
     const views: SortFieldType = this.sortForm.value?.views ?? null;
+    this.sortForm.get('date')?.setValue(null, {
+      emitViewToModelChange: false,
+    });
     this.#storeService.sort = { views, date: null };
   }
 }
